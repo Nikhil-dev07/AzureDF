@@ -1,0 +1,330 @@
+{
+	"name": "Json1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"container": "sourcedata"
+			}
+		},
+		"schema": {
+			"type": "object",
+			"properties": {
+				"$schema": {
+					"type": "string"
+				},
+				"contentVersion": {
+					"type": "string"
+				},
+				"parameters": {
+					"type": "object",
+					"properties": {
+						"IotHubs_EUWDADVSMAAIH01_connectionString": {
+							"type": "object",
+							"properties": {
+								"type": {
+									"type": "string"
+								}
+							}
+						},
+						"IotHubs_EUWDADVSMAAIH01_containerName": {
+							"type": "object",
+							"properties": {
+								"type": {
+									"type": "string"
+								}
+							}
+						},
+						"IotHubs_EUWDADVSMAAIH01_name": {
+							"type": "object",
+							"properties": {
+								"defaultValue": {
+									"type": "string"
+								},
+								"type": {
+									"type": "string"
+								}
+							}
+						}
+					}
+				},
+				"variables": {
+					"type": "object"
+				},
+				"resources": {
+					"type": "array",
+					"items": {
+						"type": "object",
+						"properties": {
+							"type": {
+								"type": "string"
+							},
+							"apiVersion": {
+								"type": "string"
+							},
+							"name": {
+								"type": "string"
+							},
+							"location": {
+								"type": "string"
+							},
+							"tags": {
+								"type": "object",
+								"properties": {
+									" ENGAGEMENT_ID": {
+										"type": "string"
+									},
+									" DEPLOYMENT_ID": {
+										"type": "string"
+									},
+									"OWNER": {
+										"type": "string"
+									},
+									" ENVIRONMENT": {
+										"type": "string"
+									},
+									" ROLE_PURPOSE": {
+										"type": "string"
+									}
+								}
+							},
+							"sku": {
+								"type": "object",
+								"properties": {
+									"name": {
+										"type": "string"
+									},
+									"tier": {
+										"type": "string"
+									},
+									"capacity": {
+										"type": "integer"
+									}
+								}
+							},
+							"properties": {
+								"type": "object",
+								"properties": {
+									"ipFilterRules": {
+										"type": "array"
+									},
+									"eventHubEndpoints": {
+										"type": "object",
+										"properties": {
+											"events": {
+												"type": "object",
+												"properties": {
+													"retentionTimeInDays": {
+														"type": "integer"
+													},
+													"partitionCount": {
+														"type": "integer"
+													}
+												}
+											}
+										}
+									},
+									"routing": {
+										"type": "object",
+										"properties": {
+											"endpoints": {
+												"type": "object",
+												"properties": {
+													"serviceBusQueues": {
+														"type": "array"
+													},
+													"serviceBusTopics": {
+														"type": "array"
+													},
+													"eventHubs": {
+														"type": "array",
+														"items": {
+															"type": "object",
+															"properties": {
+																"connectionString": {
+																	"type": "string"
+																},
+																"name": {
+																	"type": "string"
+																},
+																"subscriptionId": {
+																	"type": "string"
+																},
+																"resourceGroup": {
+																	"type": "string"
+																}
+															}
+														}
+													},
+													"storageContainers": {
+														"type": "array",
+														"items": {
+															"type": "object",
+															"properties": {
+																"connectionString": {
+																	"type": "string"
+																},
+																"containerName": {
+																	"type": "string"
+																},
+																"fileNameFormat": {
+																	"type": "string"
+																},
+																"batchFrequencyInSeconds": {
+																	"type": "integer"
+																},
+																"maxChunkSizeInBytes": {
+																	"type": "integer"
+																},
+																"encoding": {
+																	"type": "string"
+																},
+																"name": {
+																	"type": "string"
+																},
+																"subscriptionId": {
+																	"type": "string"
+																},
+																"resourceGroup": {
+																	"type": "string"
+																}
+															}
+														}
+													}
+												}
+											},
+											"routes": {
+												"type": "array",
+												"items": {
+													"type": "object",
+													"properties": {
+														"name": {
+															"type": "string"
+														},
+														"source": {
+															"type": "string"
+														},
+														"condition": {
+															"type": "string"
+														},
+														"endpointNames": {
+															"type": "array",
+															"items": {
+																"type": "string"
+															}
+														},
+														"isEnabled": {
+															"type": "boolean"
+														}
+													}
+												}
+											},
+											"fallbackRoute": {
+												"type": "object",
+												"properties": {
+													"name": {
+														"type": "string"
+													},
+													"source": {
+														"type": "string"
+													},
+													"condition": {
+														"type": "string"
+													},
+													"endpointNames": {
+														"type": "array",
+														"items": {
+															"type": "string"
+														}
+													},
+													"isEnabled": {
+														"type": "boolean"
+													}
+												}
+											}
+										}
+									},
+									"storageEndpoints": {
+										"type": "object",
+										"properties": {
+											"$default": {
+												"type": "object",
+												"properties": {
+													"sasTtlAsIso8601": {
+														"type": "string"
+													},
+													"connectionString": {
+														"type": "string"
+													},
+													"containerName": {
+														"type": "string"
+													}
+												}
+											}
+										}
+									},
+									"messagingEndpoints": {
+										"type": "object",
+										"properties": {
+											"fileNotifications": {
+												"type": "object",
+												"properties": {
+													"lockDurationAsIso8601": {
+														"type": "string"
+													},
+													"ttlAsIso8601": {
+														"type": "string"
+													},
+													"maxDeliveryCount": {
+														"type": "integer"
+													}
+												}
+											}
+										}
+									},
+									"enableFileUploadNotifications": {
+										"type": "boolean"
+									},
+									"cloudToDevice": {
+										"type": "object",
+										"properties": {
+											"maxDeliveryCount": {
+												"type": "integer"
+											},
+											"defaultTtlAsIso8601": {
+												"type": "string"
+											},
+											"feedback": {
+												"type": "object",
+												"properties": {
+													"lockDurationAsIso8601": {
+														"type": "string"
+													},
+													"ttlAsIso8601": {
+														"type": "string"
+													},
+													"maxDeliveryCount": {
+														"type": "integer"
+													}
+												}
+											}
+										}
+									},
+									"features": {
+										"type": "string"
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
